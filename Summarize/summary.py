@@ -1,5 +1,6 @@
 import streamlit as st
 import nltk
+nltk.download('punkt')
 from nltk import sent_tokenize, word_tokenize, PorterStemmer
 from nltk.corpus import stopwords
 from sumy.summarizers.lex_rank import LexRankSummarizer
