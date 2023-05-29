@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import nltk
+nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.preprocessing import LabelEncoder
