@@ -23,7 +23,7 @@ Encoder = LabelEncoder()
 Tfidf_vect = TfidfVectorizer()
 
 # Configuration
-DATA_LATIH = "./Data Latih/DATA_TRAIN.csv"
+DATA_LATIH = "./Data Latih/data_train.csv"
 DATA_UJI = "./Data Uji/Data Uji BDC.csv"
 
 
