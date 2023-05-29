@@ -92,9 +92,6 @@ def test_model(SVM):
 # Train Machine Learning model
 SVM = train_model()
 
-# Only uncomment line below if you want to generate a file on test
-# test_model(SVM)
-
 # Streamlit app
 st.title("Deteksi Sentimen Berita")
 st.write("Aplikasi ini digunakan untuk melakukan prediksi sentimen pada teks berita.")
