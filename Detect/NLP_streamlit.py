@@ -23,8 +23,8 @@ Encoder = LabelEncoder()
 Tfidf_vect = TfidfVectorizer()
 
 # Configuration
-DATA_LATIH = "./Data Latih/data_train.csv"
-DATA_UJI = "./Data Uji/Data Uji BDC.csv"
+DATA_LATIH = "./Detect/Data Latih/DATA_TRAIN.csv"
+DATA_UJI = "./Detect/Data Uji/Data Uji BDC.csv"
 
 
 def preprocess_text(text):
