@@ -1,5 +1,4 @@
 # Menginstall packages yang dibutuhkan
-!pip install gensim numpy pandas sastrawi scikit-learn
 import pandas as pd
 import numpy as np
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
