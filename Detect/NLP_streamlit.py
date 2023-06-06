@@ -103,6 +103,11 @@ def predict(text):
     classifier = RandomForestClassifier()
     classifier.fit(X_train_word_vectors, y_train)
     predicted = classifier.predict(X_test_word_vectors)
+    if predicted[0] == 1:
+        return "Berita tersebut kemungkinan Palsu"
+    else:
+        return "Berita tersebut kemungkinan Asli"
+    
     return predicted
 
 
@@ -111,7 +116,7 @@ X_train_word_vectors, X_test_word_vectors, y_train, y_test = train_model()
 
 # Streamlit app
 
-st.title("Deteksi Sentimen Berita")
+st.title("Deteksi ")
 st.write("Aplikasi ini digunakan untuk melakukan prediksi sentimen pada teks berita.")
 
 input_text = st.text_area("Masukkan teks berita")
