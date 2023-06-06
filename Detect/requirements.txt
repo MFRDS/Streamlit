@@ -1,6 +1,7 @@
 numpy
-nltk
+gensim
 pandas
 Sastrawi
 scikit_learn
 Streamlit
+
