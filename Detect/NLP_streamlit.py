@@ -103,10 +103,8 @@ def predict(text):
     classifier = RandomForestClassifier()
     classifier.fit(X_train_word_vectors, y_train)
     predicted = classifier.predict(X_test_word_vectors)
-    if predicted[0] == 0:
-        return "Berita tersebut kemungkinan Asli"
-    else:
-        return "Berita tersebut kemungkinan Palsu"
+   
+    return predict
 
 
 # Train Machine Learning model
