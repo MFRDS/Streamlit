@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn import svm
 from sklearn.metrics import accuracy_score
-import Streamlit as st
+import streamlit as st
 
 # Mengubah narasi menjadi bentuk yang telah di-stem dan tidak mengandung stopword
 # Mengambil dua kata yang sama namun memiliki arti yang berbeda secara acak untuk setiap narasi
