@@ -100,7 +100,7 @@ def train_model():
 
 
 def predict(text):
-    classifier = RandomForestClassifier()
+    classifier = svm()
     classifier.fit(X_train_word_vectors, y_train)
     predicted = classifier.predict(X_test_word_vectors)
 
@@ -115,8 +115,8 @@ X_train_word_vectors, X_test_word_vectors, y_train, y_test = train_model()
 
 # Streamlit app
 
-st.title("Deteksi ")
-st.write("Aplikasi ini digunakan untuk melakukan prediksi sentimen pada teks berita.")
+st.title("Deteksi Berita")
+st.write("Aplikasi ini digunakan untuk melakukan prediksi berita asli atau palsu. Namun aplikasi ini tidak dapat dijadikan patokan")
 
 input_text = st.text_area("Masukkan teks berita")
 
