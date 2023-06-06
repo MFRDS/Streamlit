@@ -107,8 +107,6 @@ def predict(text):
         return "Berita tersebut kemungkinan Palsu"
     else:
         return "Berita tersebut kemungkinan Asli"
-    
-    return predicted
 
 
 # Train Machine Learning model
