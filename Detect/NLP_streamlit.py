@@ -100,7 +100,7 @@ def train_model():
 
 
 def predict(text):
-    classifier = MultinomialNB()
+    classifier = RandomForestClassifier()
     classifier.fit(X_train_word_vectors, y_train)
     predicted = classifier.predict(X_test_word_vectors)
 
