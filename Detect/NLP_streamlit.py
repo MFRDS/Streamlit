@@ -104,6 +104,11 @@ def predict(text):
     classifier.fit(X_train_word_vectors, y_train)
     predicted = classifier.predict(X_test_word_vectors)
    
+    if predicted == 1:
+        return "Berita tersebut kemungkinan Palsu"
+    else:
+        return "Berita tersebut kemungkinan Asli"
+    
     return predicted
 
 
