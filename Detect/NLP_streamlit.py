@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB
-from sklearn import svm
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 import streamlit as st
 
@@ -100,7 +100,7 @@ def train_model():
 
 
 def predict(text):
-    classifier = svm()
+    classifier = SVC()
     classifier.fit(X_train_word_vectors, y_train)
     predicted = classifier.predict(X_test_word_vectors)
 
