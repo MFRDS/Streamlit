@@ -103,13 +103,11 @@ def predict(text):
     classifier = RandomForestClassifier()
     classifier.fit(X_train_word_vectors, y_train)
     predicted = classifier.predict(X_test_word_vectors)
-   
-    if predicted == 1:
+
+    if predicted[0] == 1:
         return "Berita tersebut kemungkinan Palsu"
     else:
         return "Berita tersebut kemungkinan Asli"
-    
-    return predicted
 
 
 # Train Machine Learning model
@@ -125,7 +123,7 @@ input_text = st.text_area("Masukkan teks berita")
 if st.button("Prediksi"):
     if input_text.strip() != "":
         prediction = predict(input_text)
-        sentiment = prediction[0]
-        st.success(f"Hasil Prediksi: {sentiment}")
+        st.success(f"Hasil Prediksi: {prediction}")
     else:
         st.warning("Masukkan teks berita untuk melakukan prediksi.")
+
