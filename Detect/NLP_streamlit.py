@@ -116,7 +116,7 @@ X_train_word_vectors, X_test_word_vectors, y_train, y_test = train_model()
 # Streamlit app
 
 st.title("Deteksi Berita")
-st.write("Aplikasi ini digunakan untuk melakukan prediksi berita asli atau palsu. Namun aplikasi ini tidak dapat dijadikan patokan")
+st.write("Aplikasi ini digunakan untuk melakukan prediksi berita asli atau palsu. Namun aplikasi ini tidak dapat dijadikan acuan.")
 
 input_text = st.text_area("Masukkan teks berita")
 
