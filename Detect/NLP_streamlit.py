@@ -110,7 +110,6 @@ def predict(text):
 X_train_word_vectors, X_test_word_vectors, y_train, y_test = train_model()
 
 # Streamlit app
-import streamlit as st
 
 st.title("Deteksi Sentimen Berita")
 st.write("Aplikasi ini digunakan untuk melakukan prediksi sentimen pada teks berita.")
