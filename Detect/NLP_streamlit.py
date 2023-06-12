@@ -23,7 +23,7 @@ stemmer = stemmer_factory.create_stemmer()
 stopword_remover = stopword_factory.create_stop_word_remover()
 
 # Configuration
-data_train = "Detect/data_train/data_train1.csv"
+data_train = "Detect/data_train/data_train.csv"
 
 
 # Mengambil dua kata yang sama namun mengandung beda arti secara acak
