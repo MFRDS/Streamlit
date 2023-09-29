@@ -9,14 +9,19 @@ from nltk.corpus import stopwords
 
 st.title('Text Summarization')
 
-text = st.text_area('Enter a text to summarize:')
-with st.audio("Your audio", format="audio/wav"):
-    audio_file = st.audio_record(key="audio_input")
+# Fungsi untuk konversi suara ke teks
+def speech_to_text(audio_data):
+    recognizer = sr.Recognizer()
+    with sr.AudioFile(audio_data) as source:
+        audio_data = recognizer.record(source)
+        text_from_audio = recognizer.recognize_google(audio_data)
+    return text_from_audio
 
-recognizer = sr.Recognizer()
-with sr.AudioFile(audio_file) as source:
-    audio_data = recognizer.record(source)
-    text_from_audio = recognizer.recognize_google(audio_data)  # Menggunakan Google Speech Recognition, Anda dapat memilih yang lain
+if st.button("Convert Speech to Text"):
+    if uploaded_audio:
+        text_from_audio = speech_to_text(audio_file)
+        st.success("Speech converted to text.")
+        st.text_area("Converted Text:", text_from_audio)
 
 
 def _create_frequency_table(text) -> dict:
