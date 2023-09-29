@@ -8,7 +8,7 @@ from nltk import sent_tokenize, word_tokenize, PorterStemmer
 from nltk.corpus import stopwords
 
 st.title('Text Summarization')
-text = st.text_area('Enter a text to summarize:')
+
 
 # Fungsi untuk konversi suara ke teks
 def speech_to_text(audio_data):
@@ -23,7 +23,7 @@ if st.button("Convert Speech to Text"):
         text_from_audio = speech_to_text(audio_file)
         st.success("Speech converted to text.")
         st.text_area("Converted Text:", text_from_audio)
-
+text = st.text_area('Enter a text to summarize:')
 
 def _create_frequency_table(text) -> dict:
 
