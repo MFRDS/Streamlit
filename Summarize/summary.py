@@ -1,34 +1,40 @@
 import streamlit as st
 import nltk
 import math
+import pyaudio
 import speech_recognition as sr
 nltk.download('punkt')
 nltk.download('stopwords')
 from nltk import sent_tokenize, word_tokenize, PorterStemmer
 from nltk.corpus import stopwords
 
-st.title('Text Summarization')
+st.title('Text and Audio Summarization')
 
 
-# Inisialisasi variabel uploaded_audio
-uploaded_audio = None
-
-# Fungsi untuk konversi suara ke teks
-def speech_to_text(audio_data):
+def record_and_convert():
     recognizer = sr.Recognizer()
-    with sr.AudioFile(audio_data) as source:
-        audio_data = recognizer.record(source)
+    
+    with sr.Microphone() as source:
+        st.write("Silakan mulai berbicara...")
+        audio_data = recognizer.listen(source)
+    
+    try:
         text_from_audio = recognizer.recognize_google(audio_data)
-    return text_from_audio
+        return text_from_audio
+    except sr.UnknownValueError:
+        st.warning("Tidak dapat mengenali suara. Silakan coba lagi.")
+        return ""
+    except sr.RequestError as e:
+        st.error(f"Terjadi kesalahan saat menghubungi layanan pengenalan suara: {e}")
+        return ""
 
-if st.button("Convert Speech to Text"):
-    uploaded_audio = st.audio("Your audio", format="audio/wav")
-    if uploaded_audio is not None:
-        text_from_audio = speech_to_text(uploaded_audio)
-        st.success("Speech converted to text.")
+if st.button("Record and Convert to Text"):
+    text_from_audio = record_and_convert()
+    if text_from_audio:
+        st.success("Speech converted to text:")
         st.text_area("Converted Text:", text_from_audio)
-        # Set variabel 'text' dengan teks dari hasil pengenalan suara
-        text = text_from_audio
+    else:
+        st.warning("Tidak ada teks yang dikenali.")
 
 
 text = st.text_area('Enter a text to summarize:')
