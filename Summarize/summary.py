@@ -1,3 +1,4 @@
+pip install PyAudio
 import streamlit as st
 import nltk
 import math
