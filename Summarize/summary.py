@@ -1,6 +1,6 @@
-pip install PyAudio
 import streamlit as st
 import nltk
+import math
 import pyaudio
 import speech_recognition as sr
 nltk.download('punkt')
