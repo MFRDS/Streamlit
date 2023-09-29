@@ -171,6 +171,11 @@ summary_text = _generate_summary(sentences, sentence_scores, 1.0 * threshold)
 
     
 if st.button("Summarize"):
-        st.success("text summarized.")
+    if text.strip():  # Memeriksa apakah 'text' tidak kosong atau hanya berisi spasi
+        sentences = sent_tokenize(text)
+        # Lanjutkan dengan langkah-langkah berikutnya untuk merangkum teks
+        st.success("Text summarized.")
         st.write("Summary:")
         st.write(summary_text)
+    else:
+        st.warning("Please enter some text to summarize.")
