@@ -22,7 +22,7 @@ def speech_to_text(audio_data):
     return text_from_audio
 
 if st.button("Convert Speech to Text"):
-    uploaded_audio = st.file_uploader("Upload an audio file", type=["mp3", "wav"])
+    uploaded_audio = st.audio("Your audio", format="audio/wav")
     if uploaded_audio is not None:
         text_from_audio = speech_to_text(uploaded_audio)
         st.success("Speech converted to text.")
