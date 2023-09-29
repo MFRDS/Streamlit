@@ -1,6 +1,7 @@
 import streamlit as st
 import nltk
 import math
+import speech_recognition as sr
 nltk.download('punkt')
 nltk.download('stopwords')
 from nltk import sent_tokenize, word_tokenize, PorterStemmer
@@ -9,6 +10,14 @@ from nltk.corpus import stopwords
 st.title('Text Summarization')
 
 text = st.text_area('Enter a text to summarize:')
+with st.audio("Your audio", format="audio/wav"):
+    audio_file = st.audio_record(key="audio_input")
+
+recognizer = sr.Recognizer()
+with sr.AudioFile(audio_file) as source:
+    audio_data = recognizer.record(source)
+    text_from_audio = recognizer.recognize_google(audio_data)  # Menggunakan Google Speech Recognition, Anda dapat memilih yang lain
+
 
 def _create_frequency_table(text) -> dict:
 
