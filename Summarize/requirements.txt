@@ -1,5 +1,0 @@
-streamlit
-NLTK
-sumy==0.11.0
-SpeechRecognition
-PyAudio
